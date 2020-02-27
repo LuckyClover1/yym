@@ -33,9 +33,6 @@ class module(object):
                 window_capture(react)
                 point = sift_flann_func(self.template)
 
-
-            # clickCount = wait5Sec(clickCount)
-
     def zudui(self):
         if self.team_num == 2:
             point = (0,0)
