@@ -1,8 +1,6 @@
 import json
 from class_ import module
 import tkinter
-# _thread.start_new_thread(refreshReact(),())
-# _thread.start_new_thread(refreshScance(),())
 
 print(" python applicatio started....")
 f =open('resource/zudui/yuhun.json',encoding='utf-8') #打开‘product.json’的json文件

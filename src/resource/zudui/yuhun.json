@@ -1,7 +1,7 @@
 [
-  {"action": "zudui",
+  {"action": "team",
     "template": "resource/zudui/team_add_people.bmp",
-    "match": "false",
+    "match": "",
     "team_num": 2,
     "tryTimes": 0
   },
@@ -17,7 +17,7 @@
     "tryTimes": 5,
     "team_num": 0
   },
-  {"action": "click",
+  {"action": "try_",
     "template": "resource/shengli.bmp",
     "match": "true",
     "team_num": 0,
@@ -29,13 +29,13 @@
     "team_num": 0,
     "tryTimes": 0
   },
-  {"action": "click",
+  {"action": "try_",
     "template": "resource/zudui/yaoqingduiyou.bmp",
     "match": "one",
     "team_num": 0,
     "tryTimes": 1
   },
-  {"action": "click",
+  {"action": "try_",
     "template": "resource/zudui/yaoqing_queding.bmp",
     "match": "one",
     "team_num": 0,

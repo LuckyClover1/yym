@@ -1,5 +1,10 @@
 from fs import *
 
+#action :
+#    click--匹配点击
+#    team--组队
+#    once--执行一次
+#    try_--尝试执行
 class module(object):
     def __init__(self,action,templates,match,tryTimes,team_num):
         self.action = action
@@ -10,30 +15,21 @@ class module(object):
 
     def click(self):
         point = (0,0)
-        matchCount = 0
         while point and point[0] == 0 and point[1] == 0:
             time.sleep(1)
             print('matching ',self.template)
             window_capture(react)
             point = sift_flann_func(self.template)
-            if self.match != 'one':
-                if self.tryTimes > 0:
-                    print('count matchCount ',matchCount)
-                    matchCount = matchCount+1
-                    if matchCount == self.tryTimes :
-                        break
-            else:
-                move(point)
+        move(point)
+        point = sift_flann_func(self.template)
+        while point and point[0] > 0 and point[1] > 0:
+            move(point)
+            time.sleep(0.5)
+            print('checking ',self.template)
+            window_capture(react)
+            point = sift_flann_func(self.template)
 
-        if self.match != 'one' and self.match != 'false':
-            while point and point[0] > 0 and point[1] > 0:
-                move(point)
-                time.sleep(0.5)
-                print('checking ',self.template)
-                window_capture(react)
-                point = sift_flann_func(self.template)
-
-    def zudui(self):
+    def team(self):
         if self.team_num == 2:
             point = (0,0)
             while point and point[0] == 0 and point[1] == 0:
@@ -49,12 +45,29 @@ class module(object):
                 window_capture(react)
                 point = sift_flann_func(self.template)
 
+    def once(self):
+        window_capture(react)
+        point = sift_flann_func(self.template)
+        count = 0
+        while point and point[0] == 0 and point[1] == 0:
+            move(point)
+            time.sleep(0.5)
+            print('matching ',self.template)
+            window_capture(react)
+            point = sift_flann_func(self.template)
+        move(point)
 
-def wait5Sec(clickCount):
-    clickCount=clickCount+1
-    if(clickCount >= 5):
-        print("check fail ,wait 5s.....")
-        time.sleep(1)
-        print("try check again.")
-        return 0
-    return clickCount
+
+    def try_(self):
+        point = sift_flann_func(self.template)
+        count = 0
+        times = self.tryTimes
+        if times or times == 0:
+            times = 2
+        while count < times:
+            move(point)
+            time.sleep(0.5)
+            print('checking ',self.template)
+            window_capture(react)
+            point = sift_flann_func(self.template)
+            count = count + 1
