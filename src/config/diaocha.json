@@ -1,0 +1,17 @@
+[
+  {"action": "click",
+    "template": "wanshiwu/diaocha.bmp",
+    "match": "true",
+    "team_num": 0
+  },
+  {"action": "click",
+    "template": "template/shengli.bmp",
+    "match": "true",
+    "team_num": 0
+  },
+  {"action": "click",
+    "template": "template/jiangli.bmp",
+    "match": "true",
+    "team_num": 0
+  }
+]

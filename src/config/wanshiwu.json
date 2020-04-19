@@ -1,0 +1,12 @@
+[
+  {"action": "click",
+    "template": "wanshiwu/lingqu.bmp",
+    "match": "true",
+    "team_num": 0
+  },
+  {"action": "click_once",
+    "template": "wanshiwu/guanbilingqu.bmp",
+    "match": "true",
+    "team_num": 0
+  }
+]
